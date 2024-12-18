@@ -10,6 +10,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Forms;
 using System.IO;
+using System;
 
 namespace Math_IDE
 {
@@ -21,6 +22,7 @@ namespace Math_IDE
         public string fileDialogName = "";
         public string[] readText = new string[1000];
         public string[] writeText = new string[1000];
+        public int totalLineNumber = 1;
         public MainWindow()
         {
             InitializeComponent();
@@ -74,12 +76,22 @@ namespace Math_IDE
 
         private void fileSpaceBox_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
-            if(e.Key == Key.Enter)
+            var caretIndex = fileSpaceBox.CaretIndex;
+            if (e.Key == Key.Enter)
             {
-                var caretIndex = fileSpaceBox.CaretIndex;
                 fileSpaceBox.Text = fileSpaceBox.Text.Insert(caretIndex, "\n");
+                totalLineNumber++;
+                lineNumber.Text = lineNumber.Text + "\n" + totalLineNumber;
                 fileSpaceBox.CaretIndex = caretIndex + 1;
+                Console.WriteLine(fileSpaceBox.Text[fileSpaceBox.CaretIndex - 1]);
+            }
+            if (caretIndex < totalLineNumber)
+            {
+                totalLineNumber = caretIndex;
+                lineNumber.Text = "";
             }
         }
+
+        
     }
 }
