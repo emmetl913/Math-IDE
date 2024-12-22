@@ -85,13 +85,26 @@ namespace Math_IDE
                 fileSpaceBox.CaretIndex = caretIndex + 1;
                 Console.WriteLine(fileSpaceBox.Text[fileSpaceBox.CaretIndex - 1]);
             }
-            if (caretIndex < totalLineNumber)
+
+            if (caretIndex > 0 && caretIndex < fileSpaceBox.Text.Length)
             {
-                totalLineNumber = caretIndex;
-                lineNumber.Text = "";
+                
+                if (e.Key == Key.Back && fileSpaceBox.Text[caretIndex - 1] == '\n')
+                {
+                    totalLineNumber--;
+                    lineNumber.Text = "";
+                    for (int i = 1; i <= totalLineNumber; i++)
+                    {
+                        lineNumber.Text = lineNumber.Text + i + "\n";
+                    }
+                }
             }
         }
 
-        
+        private void executeCode_Click(object sender, RoutedEventArgs e)
+        {
+            var tokenizer = new Tokenize();
+            var code = tokenizer.TokenizeText(fileSpaceBox.Text);
+        }
     }
 }
