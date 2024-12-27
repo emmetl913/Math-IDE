@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Math-IDE")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e92e26884603096414ea4b08794185cf370dee5d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+35d92d8e0f62bcb8850ad7ab909c10864eac285b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Math-IDE")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Math-IDE")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
