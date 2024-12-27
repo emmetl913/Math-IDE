@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace Math_IDE
 {
@@ -12,13 +13,16 @@ namespace Math_IDE
     {
         public string TokenizeText(string text)
         {
-            string[] tokens = text.Split(' ');
+            string pattern = @"[a-zA-Z_][a-zA-Z0-9_]*|[0-9]+|[=;,]|[\[\]\(\)\{\}]";
+            
+            MatchCollection matches = Regex.Matches(text, pattern);
+
             string tokenizedText = "";
-            foreach (string token in tokens)
+            foreach (Match match in matches)
             {
-                tokenizedText += token + "\n";
+                tokenizedText += match.Value + "\n";
             }
-            Console.WriteLine(tokenizedText);
+
             return tokenizedText;
         }   
     }

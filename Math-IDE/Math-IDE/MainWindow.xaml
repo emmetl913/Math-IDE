@@ -10,9 +10,11 @@
         <Button Name="openFileButton" Click="openFileButton_Click" Content="Open a text File" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="44" Width="107"/>
         <Button Name="saveFileButton" Click="saveFileButton_Click" Content="Save a text File" HorizontalAlignment="Left" Margin="135,10,0,0" VerticalAlignment="Top" Height="44" Width="107"/>
         <TextBox Name="fileSpaceBox" BorderBrush="Black" BorderThickness="1" VerticalScrollBarVisibility="Auto" FontSize="14" KeyDown="fileSpaceBox_KeyDown" HorizontalAlignment="Left" Margin="409,121,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="684" Height="487"/>
-        <TextBlock Name="fileNameBlock" Background="LightGray" FontSize="14" ScrollViewer.HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Left" Margin="409,90,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="26" Width="684"/>
+        <TextBlock Name="fileNameBlock" Background="LightGray" FontSize="14" ScrollViewer.HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Left" Margin="409,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="26" Width="684"/>
         <TextBlock HorizontalAlignment="Left" FontSize="14" Margin="409,53,0,0" TextWrapping="Wrap" Text="File Name:" VerticalAlignment="Top"/>
         <TextBox Name="lineNumber" HorizontalAlignment="Left" FontSize="14" Margin="382,121,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="27" Height="487"/>
         <Button Name="executeCode" Click="executeCode_Click" Content="Process File" HorizontalAlignment="Left" Margin="409,613,0,0" VerticalAlignment="Top" Height="22" Width="77"/>
+        <TextBox Name="tokenizedCode" HorizontalAlignment="Left" Margin="10,121,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215" Height="133"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,103,0,0" TextWrapping="Wrap" Text="Tokenized Code:" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>

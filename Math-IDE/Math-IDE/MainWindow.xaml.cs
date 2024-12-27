@@ -105,6 +105,7 @@ namespace Math_IDE
         {
             var tokenizer = new Tokenize();
             var code = tokenizer.TokenizeText(fileSpaceBox.Text);
+            tokenizedCode.Text = code;
         }
     }
 }
