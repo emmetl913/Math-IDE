@@ -16,5 +16,7 @@
         <Button Name="executeCode" Click="executeCode_Click" Content="Process File" HorizontalAlignment="Left" Margin="409,613,0,0" VerticalAlignment="Top" Height="22" Width="77"/>
         <TextBox Name="tokenizedCode" HorizontalAlignment="Left" Margin="10,121,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215" Height="133"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,103,0,0" TextWrapping="Wrap" Text="Tokenized Code:" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,304,0,0" TextWrapping="Wrap" Text="Output:" VerticalAlignment="Top" RenderTransformOrigin="-0.458,0.373"/>
+        <TextBox Name="outputConsole" HorizontalAlignment="Left" Margin="10,325,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215" Height="133"/>
     </Grid>
 </Window>

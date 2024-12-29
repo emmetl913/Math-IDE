@@ -104,8 +104,10 @@ namespace Math_IDE
         private void executeCode_Click(object sender, RoutedEventArgs e)
         {
             var tokenizer = new Tokenize();
+            //var interpreter = new Interpreter();
             var code = tokenizer.TokenizeText(fileSpaceBox.Text);
             tokenizedCode.Text = code;
+
         }
     }
 }
