@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using System.Windows;
+using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -26,6 +27,8 @@ namespace Math_IDE
         public MainWindow()
         {
             InitializeComponent();
+            updateLineNumbers();
+
         }
 
         private void openFileButton_Click(object sender, RoutedEventArgs e)
@@ -72,33 +75,33 @@ namespace Math_IDE
                 }
             }
 
-        }     
-
-        private void fileSpaceBox_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        }
+        private void updateLineNumbers()
         {
-            var caretIndex = fileSpaceBox.CaretIndex;
-            if (e.Key == Key.Enter)
+            int lineCount = fileSpaceBox.LineCount;
+            LineNumbersPanel.Children.Clear();
+
+            for (int i = 1; i <= lineCount; i++)
             {
-                fileSpaceBox.Text = fileSpaceBox.Text.Insert(caretIndex, "\n");
-                totalLineNumber++;
-                lineNumber.Text = lineNumber.Text + "\n" + totalLineNumber;
-                fileSpaceBox.CaretIndex = caretIndex + 1;
-                Console.WriteLine(fileSpaceBox.Text[fileSpaceBox.CaretIndex - 1]);
+                TextBlock line = new TextBlock
+                {
+                    Text = i.ToString(),
+                    FontFamily = new System.Windows.Media.FontFamily("Consolas"),
+                    FontSize = 14,
+                    Margin = new Thickness(5, 0, 10, 0),
+                    Foreground = System.Windows.Media.Brushes.Gray
+                };
+                LineNumbersPanel.Children.Add(line);
             }
 
-            if (caretIndex > 0 && caretIndex < fileSpaceBox.Text.Length)
-            {
-                
-                if (e.Key == Key.Back && fileSpaceBox.Text[caretIndex - 1] == '\n')
-                {
-                    totalLineNumber--;
-                    lineNumber.Text = "";
-                    for (int i = 1; i <= totalLineNumber; i++)
-                    {
-                        lineNumber.Text = lineNumber.Text + i + "\n";
-                    }
-                }
-            }
+        }
+        private void EditorTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            updateLineNumbers();
+        }
+        private void TextScroll_ScrollChanged(object sender, ScrollChangedEventArgs e)
+        {
+            LineNumbersScroll.ScrollToVerticalOffset(e.VerticalOffset);
         }
 
         private void executeCode_Click(object sender, RoutedEventArgs e)
