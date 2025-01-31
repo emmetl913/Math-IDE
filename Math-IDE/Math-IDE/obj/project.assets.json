@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\elars\\Documents\\Github\\Math-IDE\\Math-IDE\\Math-IDE\\Math-IDE.csproj",
+      "projectUniqueName": "C:\\Users\\elars\\Documents\\GitHub\\Math-IDE\\Math-IDE\\Math-IDE\\Math-IDE.csproj",
       "projectName": "Math-IDE",
-      "projectPath": "C:\\Users\\elars\\Documents\\Github\\Math-IDE\\Math-IDE\\Math-IDE\\Math-IDE.csproj",
+      "projectPath": "C:\\Users\\elars\\Documents\\GitHub\\Math-IDE\\Math-IDE\\Math-IDE\\Math-IDE.csproj",
       "packagesPath": "C:\\Users\\elars\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\elars\\Documents\\Github\\Math-IDE\\Math-IDE\\Math-IDE\\obj\\",
+      "outputPath": "C:\\Users\\elars\\Documents\\GitHub\\Math-IDE\\Math-IDE\\Math-IDE\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -46,6 +46,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -70,7 +75,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

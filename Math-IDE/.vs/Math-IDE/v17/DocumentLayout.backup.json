@@ -1,0 +1,160 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\elars\\Documents\\GitHub\\Math-IDE\\Math-IDE\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DA79A1C1-98DC-4C06-8C35-B86855FF86C2}|Math-IDE\\Math-IDE.csproj|c:\\users\\elars\\documents\\github\\math-ide\\math-ide\\math-ide\\interpreter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA79A1C1-98DC-4C06-8C35-B86855FF86C2}|Math-IDE\\Math-IDE.csproj|solutionrelative:math-ide\\interpreter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA79A1C1-98DC-4C06-8C35-B86855FF86C2}|Math-IDE\\Math-IDE.csproj|c:\\users\\elars\\documents\\github\\math-ide\\math-ide\\math-ide\\tokenize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA79A1C1-98DC-4C06-8C35-B86855FF86C2}|Math-IDE\\Math-IDE.csproj|solutionrelative:math-ide\\tokenize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA79A1C1-98DC-4C06-8C35-B86855FF86C2}|Math-IDE\\Math-IDE.csproj|c:\\users\\elars\\documents\\github\\math-ide\\math-ide\\math-ide\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA79A1C1-98DC-4C06-8C35-B86855FF86C2}|Math-IDE\\Math-IDE.csproj|solutionrelative:math-ide\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA79A1C1-98DC-4C06-8C35-B86855FF86C2}|Math-IDE\\Math-IDE.csproj|c:\\users\\elars\\documents\\github\\math-ide\\math-ide\\math-ide\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA79A1C1-98DC-4C06-8C35-B86855FF86C2}|Math-IDE\\Math-IDE.csproj|solutionrelative:math-ide\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA79A1C1-98DC-4C06-8C35-B86855FF86C2}|Math-IDE\\Math-IDE.csproj|c:\\users\\elars\\documents\\github\\math-ide\\math-ide\\math-ide\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{DA79A1C1-98DC-4C06-8C35-B86855FF86C2}|Math-IDE\\Math-IDE.csproj|solutionrelative:math-ide\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA79A1C1-98DC-4C06-8C35-B86855FF86C2}|Math-IDE\\Math-IDE.csproj|c:\\users\\elars\\documents\\github\\math-ide\\math-ide\\math-ide\\math-ide.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{DA79A1C1-98DC-4C06-8C35-B86855FF86C2}|Math-IDE\\Math-IDE.csproj|solutionrelative:math-ide\\math-ide.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA79A1C1-98DC-4C06-8C35-B86855FF86C2}|Math-IDE\\Math-IDE.csproj|c:\\users\\elars\\documents\\github\\math-ide\\math-ide\\math-ide\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA79A1C1-98DC-4C06-8C35-B86855FF86C2}|Math-IDE\\Math-IDE.csproj|solutionrelative:math-ide\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA79A1C1-98DC-4C06-8C35-B86855FF86C2}|Math-IDE\\Math-IDE.csproj|c:\\users\\elars\\documents\\github\\math-ide\\math-ide\\math-ide\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{DA79A1C1-98DC-4C06-8C35-B86855FF86C2}|Math-IDE\\Math-IDE.csproj|solutionrelative:math-ide\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\elars\\Documents\\GitHub\\Math-IDE\\Math-IDE\\Math-IDE\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Math-IDE\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\elars\\Documents\\GitHub\\Math-IDE\\Math-IDE\\Math-IDE\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Math-IDE\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAcwHIAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T17:13:27.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Tokenize.cs",
+              "DocumentMoniker": "C:\\Users\\elars\\Documents\\GitHub\\Math-IDE\\Math-IDE\\Math-IDE\\Tokenize.cs",
+              "RelativeDocumentMoniker": "Math-IDE\\Tokenize.cs",
+              "ToolTip": "C:\\Users\\elars\\Documents\\GitHub\\Math-IDE\\Math-IDE\\Math-IDE\\Tokenize.cs",
+              "RelativeToolTip": "Math-IDE\\Tokenize.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T02:35:10.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Interpreter.cs",
+              "DocumentMoniker": "C:\\Users\\elars\\Documents\\GitHub\\Math-IDE\\Math-IDE\\Math-IDE\\Interpreter.cs",
+              "RelativeDocumentMoniker": "Math-IDE\\Interpreter.cs",
+              "ToolTip": "C:\\Users\\elars\\Documents\\GitHub\\Math-IDE\\Math-IDE\\Math-IDE\\Interpreter.cs",
+              "RelativeToolTip": "Math-IDE\\Interpreter.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAgwCsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T02:45:25.357Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\elars\\Documents\\GitHub\\Math-IDE\\Math-IDE\\Math-IDE\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "Math-IDE\\AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\elars\\Documents\\GitHub\\Math-IDE\\Math-IDE\\Math-IDE\\AssemblyInfo.cs",
+              "RelativeToolTip": "Math-IDE\\AssemblyInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T17:13:45.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Math-IDE.csproj",
+              "DocumentMoniker": "C:\\Users\\elars\\Documents\\GitHub\\Math-IDE\\Math-IDE\\Math-IDE\\Math-IDE.csproj",
+              "RelativeDocumentMoniker": "Math-IDE\\Math-IDE.csproj",
+              "ToolTip": "C:\\Users\\elars\\Documents\\GitHub\\Math-IDE\\Math-IDE\\Math-IDE\\Math-IDE.csproj",
+              "RelativeToolTip": "Math-IDE\\Math-IDE.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-12-16T17:37:20.524Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\elars\\Documents\\GitHub\\Math-IDE\\Math-IDE\\Math-IDE\\App.xaml.cs",
+              "RelativeDocumentMoniker": "Math-IDE\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\elars\\Documents\\GitHub\\Math-IDE\\Math-IDE\\Math-IDE\\App.xaml.cs",
+              "RelativeToolTip": "Math-IDE\\App.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAoAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T17:13:50.572Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\elars\\Documents\\GitHub\\Math-IDE\\Math-IDE\\Math-IDE\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Math-IDE\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\elars\\Documents\\GitHub\\Math-IDE\\Math-IDE\\Math-IDE\\MainWindow.xaml",
+              "RelativeToolTip": "Math-IDE\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-16T17:13:29.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\elars\\Documents\\GitHub\\Math-IDE\\Math-IDE\\Math-IDE\\App.xaml",
+              "RelativeDocumentMoniker": "Math-IDE\\App.xaml",
+              "ToolTip": "C:\\Users\\elars\\Documents\\GitHub\\Math-IDE\\Math-IDE\\Math-IDE\\App.xaml",
+              "RelativeToolTip": "Math-IDE\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-16T17:13:43.345Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

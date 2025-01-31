@@ -12,6 +12,7 @@ using System.Windows.Shapes;
 using System.Windows.Forms;
 using System.IO;
 using System;
+using System.Diagnostics;
 
 namespace Math_IDE
 {
@@ -21,8 +22,8 @@ namespace Math_IDE
     public partial class MainWindow : Window
     {
         public string fileDialogName = "";
-        public string[] readText = new string[1000];
-        public string[] writeText = new string[1000];
+        public string[] readText = new string[10000];
+        public string[] writeText = new string[10000];
         public int totalLineNumber = 1;
         public MainWindow()
         {
@@ -95,6 +96,7 @@ namespace Math_IDE
             }
 
         }
+
         private void EditorTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             updateLineNumbers();
@@ -107,10 +109,15 @@ namespace Math_IDE
         private void executeCode_Click(object sender, RoutedEventArgs e)
         {
             var tokenizer = new Tokenize();
-            //var interpreter = new Interpreter();
+            Debug.WriteLine("New Tokenizer successfully created! \n");
+            var interpreter = new Interpreter();
+            Debug.WriteLine("New Interpreter successfully created! \n");
             var code = tokenizer.TokenizeText(fileSpaceBox.Text);
-            tokenizedCode.Text = code;
-
+            foreach (var token in code)
+            {
+                tokenizedCode.Text += token;
+            }
+            interpreter.parseCode(code);
         }
     }
 }
