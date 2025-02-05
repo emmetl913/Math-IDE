@@ -17,6 +17,7 @@ namespace Math_IDE
         /// and variable definitions
         /// </summary>
         Matrix[] mats = new Matrix[1000];
+        public LinkedList<string> output_log = new LinkedList<string>();
         int offset = 0;
         public void parseCode(string[] code)
         {
@@ -37,14 +38,16 @@ namespace Math_IDE
         {
             string name = next;
             int x = 0, y = 0, i = 0;
+            bool first_row = true;
             Debug.WriteLine("Creating matrix under name: " +  name);
             while (next != "]")
             {
                 if (next == ";")
                 {
                     y++;
+                    first_row = false;
                 }
-                if (int.TryParse(next, out int result))
+                if (int.TryParse(next, out int result) && first_row)
                 {
                     x++;
                 }
@@ -55,15 +58,17 @@ namespace Math_IDE
 
                 Debug.WriteLine($"{next} {x}");
             }
-            mats[offset] = new Matrix(x, y, name);
-            offset++;
+            y++;
+            Debug.WriteLine($"Matrix size defined as: {y} , {x}");
+            Debug.WriteLine("Matrix should now be empty: ");
+            
 
             int[,] tempMat = new int[y, x]; 
-            int row = 0, col = 0, j = 0;
+            int row = 0, col = 0, j = Array.IndexOf(code, name);
 
-            next = code[i++];
-
-            while (next != "]" && j <= code.Length)
+            next = name;
+            Debug.WriteLine($"Next item: {next}");
+            while (next != "]")
             {
                 if (int.TryParse(next, out int result))
                 {
@@ -93,11 +98,12 @@ namespace Math_IDE
                     next = code[j++];
                 }
             }
-
+            mats[offset] = new Matrix(x, y, name, tempMat);
+            offset++;
             Debug.WriteLine("Matrix parsed successfully!");
+            output_log.AddFirst("New Matrix A Created! In=" + (offset - 1) + "  Contents: \n" + mats[offset-1].DebugPrintGetter());
 
-
-            Debug.WriteLine("New Matrix Created! In=" + (offset - 1));
+            Debug.WriteLine("New Matrix A Created! In=" + (offset - 1));
             mats[offset-1].DebugPrint();
         }
 
@@ -110,14 +116,13 @@ namespace Math_IDE
             public string Name { get; }
             public int[,] Data { get; }
 
-            public Matrix(int rows, int cols, string name)
+            public Matrix(int rows, int cols, string name, int[,] data)
             {
                 Rows = rows;
                 Cols = cols;
                 Name = name;
-                Data = new int[rows, cols];
+                Data = data;
             }
-
             public void DebugPrint()
             {
                 Debug.WriteLine($"Matrix Name: {Name}");
@@ -133,6 +138,20 @@ namespace Math_IDE
                     }
                     Debug.WriteLine(rowValues);
                 }
+            }
+            public string DebugPrintGetter()
+            {
+                string rowValues = "";
+                for (int i = 0; i < Rows; i++)
+                {
+                    
+                    for (int j = 0; j < Cols; j++)
+                    {
+                        rowValues += Data[i, j] + (j < Cols - 1 ? ", " : "");
+                    }
+                    rowValues += "\n";
+                }
+                return rowValues;
             }
         }
         

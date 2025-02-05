@@ -112,12 +112,21 @@ namespace Math_IDE
             Debug.WriteLine("New Tokenizer successfully created! \n");
             var interpreter = new Interpreter();
             Debug.WriteLine("New Interpreter successfully created! \n");
+
+            tokenizedCode.Text = "";
+            outputConsole.Text = "";
+
             var code = tokenizer.TokenizeText(fileSpaceBox.Text);
             foreach (var token in code)
             {
                 tokenizedCode.Text += token;
             }
             interpreter.parseCode(code);
+            foreach (string item in interpreter.output_log)
+            {
+                outputConsole.Text += item;
+            }
+       
         }
     }
 }
