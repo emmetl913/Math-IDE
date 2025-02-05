@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Math_IDE;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -24,66 +25,115 @@ namespace Math_IDE
                 string current = item;
                 string next = code[Array.IndexOf(code, item) + 1];
                 Debug.WriteLine("Current Item: " + current + "     Next Item: " + next);
-                handle_mat(code, item, current, next);
+                if (current == "mat")
+                {
+                    Debug.WriteLine("Matrix Detected!");
+                    handle_mat(code, item, current, next);
+                }
             }
         }
 
         public void handle_mat(string[] code, string item, string current, string next)
         {
-            Debug.WriteLine("Matrix Detected!");
-            if (current == "mat")
+            string name = next;
+            int x = 0, y = 0, i = 0;
+            Debug.WriteLine("Creating matrix under name: " +  name);
+            while (next != "]")
             {
-                string name = next;
-                int x = 0, y = 0;
+                if (next == ";")
+                {
+                    y++;
+                }
+                if (int.TryParse(next, out int result))
+                {
+                    x++;
+                }
+                if (i < code.Length)
+                { 
+                    next = code[i++];
+                }
 
-                while (next != "]")
-                {
-                    //next = code[Array.IndexOf(code, next) + 1];
-                    if (x < code.Length) { 
-                        next = code[x++];
-                    }
-                    if (next == ";")
-                    {
-                        y++;
-                    }
-                    if (int.TryParse(next, out int result))
-                    {
-                        x++;
-                    }
-                    Debug.WriteLine($"{name} {result}");
-                }
-                mats[offset] = new Matrix(x, y, name);
-                offset++;
-                next = name;
-                int[,] tempMat = new int[x, y];
-                x = 0; y = 0;
-                while (next != "]")
-                {
-                    if (int.TryParse(next, out int result))
-                    {
-                        tempMat[x, y] = result;
-                        x++;
-                    }
-                    if (next == ";")
-                    {
-                        y++;
-                    }
-                }
-                Debug.WriteLine("New Matrix Created! In=" + (offset - 1));
+                Debug.WriteLine($"{next} {x}");
             }
-            else
+            mats[offset] = new Matrix(x, y, name);
+            offset++;
+
+            int[,] tempMat = new int[y, x]; 
+            int row = 0, col = 0, j = 0;
+
+            next = code[i++];
+
+            while (next != "]" && j <= code.Length)
             {
-                Debug.WriteLine("Item was not a matrix, returning...");
-                return;
+                if (int.TryParse(next, out int result))
+                {
+                    if (col >= x)
+                    {
+                        Debug.WriteLine($"Error: Too many columns in row {row}.");
+                        break;
+                    }
+
+                    tempMat[row, col] = result;
+                    col++;
+                }
+                else if (next == ";")
+                {
+                    if (row + 1 >= y)
+                    {
+                        Debug.WriteLine("Error: Too many rows.");
+                        break;
+                    }
+
+                    row++; 
+                    col = 0; 
+                }
+
+                if (j < code.Length)
+                {
+                    next = code[j++];
+                }
             }
+
+            Debug.WriteLine("Matrix parsed successfully!");
+
+
+            Debug.WriteLine("New Matrix Created! In=" + (offset - 1));
+            mats[offset-1].DebugPrint();
         }
 
-        public class Matrix (int x_size, int y_size, string name)
+
+
+        public class Matrix
         {
-            public int[,] matrix = new int[x_size, y_size];
-            public string name = name;
-            public int x_size = x_size;
-            public int y_size = y_size;
+            public int Rows { get; }
+            public int Cols { get; }
+            public string Name { get; }
+            public int[,] Data { get; }
+
+            public Matrix(int rows, int cols, string name)
+            {
+                Rows = rows;
+                Cols = cols;
+                Name = name;
+                Data = new int[rows, cols];
+            }
+
+            public void DebugPrint()
+            {
+                Debug.WriteLine($"Matrix Name: {Name}");
+                Debug.WriteLine($"Dimensions: {Rows} x {Cols}");
+                Debug.WriteLine("Contents:");
+
+                for (int i = 0; i < Rows; i++)
+                {
+                    string rowValues = "";
+                    for (int j = 0; j < Cols; j++)
+                    {
+                        rowValues += Data[i, j] + (j < Cols - 1 ? ", " : "");
+                    }
+                    Debug.WriteLine(rowValues);
+                }
+            }
         }
         
     }
