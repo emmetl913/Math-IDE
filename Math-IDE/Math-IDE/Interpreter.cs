@@ -21,16 +21,22 @@ namespace Math_IDE
         int offset = 0;
         public void parseCode(string[] code)
         {
+            int iterator = 0;
+            string next = "";
             foreach (string item in code)
             { 
                 string current = item;
-                string next = code[Array.IndexOf(code, item) + 1];
+                if (iterator < code.Length-1)
+                {
+                    next = code[iterator + 1];
+                }
                 Debug.WriteLine("Current Item: " + current + "     Next Item: " + next);
                 if (current == "mat")
                 {
-                    Debug.WriteLine("Matrix Detected!");
+                    Debug.WriteLine("Matrix Detected! " + item + "  " + current + "  " + next);
                     handle_mat(code, item, current, next);
                 }
+                iterator++;
             }
         }
 
@@ -38,6 +44,7 @@ namespace Math_IDE
         {
             string name = next;
             int x = 0, y = 0, i = 0;
+            Debug.WriteLine($"Current x:{x}, y:{y}, i:{i}");
             bool first_row = true;
             Debug.WriteLine("Creating matrix under name: " +  name);
             while (next != "]")
@@ -65,7 +72,7 @@ namespace Math_IDE
 
             int[,] tempMat = new int[y, x]; 
             int row = 0, col = 0, j = Array.IndexOf(code, name);
-
+            Debug.WriteLine("Index of mat: " + j);
             next = name;
             Debug.WriteLine($"Next item: {next}");
             while (next != "]")
@@ -101,7 +108,7 @@ namespace Math_IDE
             mats[offset] = new Matrix(x, y, name, tempMat);
             offset++;
             Debug.WriteLine("Matrix parsed successfully!");
-            output_log.AddFirst("New Matrix A Created! In=" + (offset - 1) + "  Contents: \n" + mats[offset-1].DebugPrintGetter());
+            output_log.AddFirst($"New Matrix {mats[offset - 1].Name} Created! In=" + (offset - 1) + "  Contents: \n" + mats[offset-1].DebugPrintGetter());
 
             Debug.WriteLine("New Matrix A Created! In=" + (offset - 1));
             mats[offset-1].DebugPrint();
