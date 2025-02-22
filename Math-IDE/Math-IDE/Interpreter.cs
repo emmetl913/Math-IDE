@@ -34,16 +34,20 @@ namespace Math_IDE
                 if (current == "mat")
                 {
                     Debug.WriteLine("Matrix Detected! " + item + "  " + current + "  " + next);
-                    handle_mat(code, item, current, next);
+                    handle_mat(code, item, current, next, iterator);
+                }
+                if (next == "=")
+                {
+                    Debug.WriteLine("Operation Detected! Now attempting to parse... " + current + " " + next +" ");
                 }
                 iterator++;
             }
         }
 
-        public void handle_mat(string[] code, string item, string current, string next)
+        public void handle_mat(string[] code, string item, string current, string next, int iterator)
         {
             string name = next;
-            int x = 0, y = 0, i = 0;
+            int x = 0, y = 0, i = iterator;
             Debug.WriteLine($"Current x:{x}, y:{y}, i:{i}");
             bool first_row = true;
             Debug.WriteLine("Creating matrix under name: " +  name);
@@ -114,6 +118,46 @@ namespace Math_IDE
             mats[offset-1].DebugPrint();
         }
 
+        public void mat_arithemetic(string name1, string name2, string opp, string resultant_name)
+        {
+            // Search mats array for two matricies to add
+            int[,] temp = new int[0, 0];
+            Matrix mat1 = new Matrix(0, 0, "nullptr", temp); 
+            Matrix mat2 = new Matrix(0, 0, "nullptr", temp );
+            for (int i = 0; i < mats.Length; i++)
+            {
+                if (mats[i].Name == name1)
+                { 
+                    mat1 = mats[i];
+                }
+                if (mats[i].Name == name2)
+                { 
+                    mat2 = mats[i];
+                }
+            }
+
+            if (opp == "+")
+            {
+                Matrix result = mat1.add(mat2, resultant_name);
+            }
+            else if (opp == "-")
+            {
+                Matrix result = mat1.subtract(mat2, resultant_name);
+            }
+            else if (opp == "*")
+            {
+
+            }
+            else if (opp == "/")
+            {
+
+            }
+            else
+            {
+                throw new Exception("Operator not recognized");
+            }
+        }
+
 
 
         public class Matrix
@@ -136,10 +180,10 @@ namespace Math_IDE
                 Debug.WriteLine($"Dimensions: {Rows} x {Cols}");
                 Debug.WriteLine("Contents:");
 
-                for (int i = 0; i < Rows; i++)
+                for (int i = 0; i < Cols; i++)
                 {
                     string rowValues = "";
-                    for (int j = 0; j < Cols; j++)
+                    for (int j = 0; j < Rows; j++)
                     {
                         rowValues += Data[i, j] + (j < Cols - 1 ? ", " : "");
                     }
@@ -149,16 +193,60 @@ namespace Math_IDE
             public string DebugPrintGetter()
             {
                 string rowValues = "";
-                for (int i = 0; i < Rows; i++)
+                for (int i = 0; i < Cols; i++)
                 {
                     
-                    for (int j = 0; j < Cols; j++)
+                    for (int j = 0; j < Rows; j++)
                     {
                         rowValues += Data[i, j] + (j < Cols - 1 ? ", " : "");
                     }
                     rowValues += "\n";
                 }
                 return rowValues;
+            }
+
+            public Matrix add(Matrix opperator, string new_name)
+            {
+                if (opperator.Rows != this.Rows || opperator.Cols != this.Cols)
+                {
+                    throw new Exception("Cannot add two matricies with different rows/cols");
+                }
+
+
+                int[,] new_data = new int[this.Rows, this.Cols];
+                for (int i = 0; i < Cols; i++)
+                {
+                    string rowValues = "";
+                    for (int j = 0; j < Rows; j++)
+                    {
+                        new_data[i, j] = this.Data[i,j] + opperator.Data[i,j];
+                    }
+                }
+
+                Matrix resultant = new Matrix(Rows, Cols, new_name, new_data);
+                return resultant;
+            }
+
+            public Matrix subtract(Matrix opperator, string new_name)
+            {
+                if (opperator.Rows != this.Rows || opperator.Cols != this.Cols)
+                {
+                    throw new Exception("Cannot add two matricies with different rows/cols");
+                }
+
+
+                int[,] new_data = new int[this.Rows, this.Cols];
+                for (int i = 0; i < Cols; i++)
+                {
+                    string rowValues = "";
+                    for (int j = 0; j < Rows; j++)
+                    {
+                        new_data[i, j] = this.Data[i, j] - opperator.Data[i, j];
+                    }
+                }
+
+                Matrix resultant = new Matrix(Rows, Cols, new_name, new_data);
+                return resultant;
             }
         }
         
